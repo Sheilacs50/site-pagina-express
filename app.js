@@ -11,7 +11,7 @@ const CONFIG = {
   whatsappMensagemPlano: (plano) => `Olá! Quero o plano ${plano} do Cartão de Visita 1 Clique. Pode me explicar e fazer minha prévia grátis? 😊`,
 
   // Links (troque quando tiver)
-  instagramUrl: "https://instagram.com/",
+  instagramUrl: "https://instagram.com/Sheila.paginasexpress",
   // Pix
   pixChave: "sheilanascimento.tdr@gmail.com",
 };
