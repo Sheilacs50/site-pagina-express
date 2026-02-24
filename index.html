@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sheila • Cartão de Visita 1 Clique</title>
-  <meta name="description" content="Cartão de visita em 1 clique com WhatsApp Business, Instagram e Pix. Peça sua prévia grátis." />
+  <meta name="description" content="Cartão de Visita 1 Clique com WhatsApp Business, Instagram e Pix. Peça sua prévia grátis." />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -103,8 +103,7 @@
   <a class="floatWhats" id="floatWhats" href="#" target="_blank" rel="noopener" aria-label="Chamar no WhatsApp">💬</a>
 
   <script>
-    // ====== CONFIG ======
-    const WHATS_NUMBER = "5511985556223"; // WhatsApp Business: 55 + DDD + número
+    const WHATS_NUMBER = "5511985556223";
     const INSTA_URL = "https://www.instagram.com/sheila.paginasexpress?igsh=MWF1dWEyMGg4aHE3dw==";
     const PIX_KEY = "sheilanascimento.tdr@gmail.com";
 
@@ -113,43 +112,28 @@
     const MSG_PLANO = (plano) => `Olá! Quero o plano ${plano} do Cartão de Visita 1 Clique. Pode fazer minha prévia grátis e me explicar o que vem incluso? 😊`;
 
     const wa = (msg) => `https://wa.me/${WHATS_NUMBER}?text=${encodeURIComponent(msg)}`;
-
-    // Links WhatsApp
     const waGeral = wa(MSG_GERAL);
+
     ["btnWhatsTop","btnWhats2","btnWhatsBottom","floatWhats"].forEach(id => {
       const el = document.getElementById(id);
       if (el) el.href = waGeral;
     });
 
-    // Links Instagram
     ["btnInstaTop","btnInstaBottom"].forEach(id => {
       const el = document.getElementById(id);
       if (el) el.href = INSTA_URL;
     });
 
-    // Modelos → WhatsApp
-    const modelos = [
-      ["m1", "Loja (Variedades)"],
-      ["m2", "Salão de Beleza"],
-      ["m3", "Confeitaria"]
-    ];
-    modelos.forEach(([id, nome]) => {
+    [["m1","Loja (Variedades)"],["m2","Salão de Beleza"],["m3","Confeitaria"]].forEach(([id,nome])=>{
       const el = document.getElementById(id);
       if (el) el.href = wa(MSG_MODELO(nome));
     });
 
-    // Planos → WhatsApp
-    const planos = [
-      ["p1", "Básico"],
-      ["p2", "Pro"],
-      ["p3", "Premium"],
-    ];
-    planos.forEach(([id, plano]) => {
+    [["p1","Básico"],["p2","Pro"],["p3","Premium"]].forEach(([id,plano])=>{
       const el = document.getElementById(id);
       if (el) el.href = wa(MSG_PLANO(plano));
     });
 
-    // Copiar Pix
     const btnPix = document.getElementById("btnPix");
     const pixMsg = document.getElementById("pixMsg");
     if (btnPix){
