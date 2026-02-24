@@ -5,7 +5,7 @@ const CONFIG = {
   papel: "Criadora Digital • Cartão 1 Clique",
 
   // WhatsApp (55 + DDD + número, sem espaços)
-  whatsappNumero: "5591987256292",
+  whatsappNumero: "5511985556223",
   // Mensagens automáticas (você pode trocar)
   whatsappMensagemGeral: "Olá! Quero uma Página 'Cartão de Visita 1 Clique'. Pode fazer uma prévia grátis com meu nome? 😊",
   whatsappMensagemPlano: (plano) => `Olá! Quero o plano ${plano} do Cartão de Visita 1 Clique. Pode me explicar e fazer minha prévia grátis? 😊`,
