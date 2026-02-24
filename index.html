@@ -1,232 +1,151 @@
-:root{
-  --bg1:#0b0612;          /* roxo quase preto */
-  --bg2:#1b0730;          /* roxo profundo */
-  --card1:rgba(255,255,255,.06);
-  --card2:rgba(255,255,255,.03);
-  --stroke:rgba(255,215,0,.34);
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sheila • Cartão de Visita 1 Clique</title>
+  <meta name="description" content="Cartão de Visita 1 Clique com WhatsApp Business, Instagram e Pix. Peça sua prévia grátis." />
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <header class="top">
+    <h1>Sheila • Páginas Express</h1>
+    <nav>
+      <a class="active" href="#inicio">Início</a>
+      <a href="#modelos">Modelos</a>
+      <a href="#planos">Planos</a>
+      <a href="#contato">Contato</a>
+    </nav>
+  </header>
 
-  --text:#ffffff;
-  --muted:rgba(255,255,255,.78);
+  <main class="container" id="inicio">
+    <section class="card">
+      <h2>Cartão de visita em 1 clique</h2>
+      <p>
+        Muita gente perde venda por não ter um link organizado.
+        Eu crio seu <strong>Cartão de Visita 1 Clique</strong> com tudo pronto para divulgar.
+      </p>
 
-  --gold:#FFD700;
-  --gold2:#ffea6a;        /* dourado mais “vivo” */
-  --goldSoft:rgba(255,215,0,.14);
+      <div class="grid">
+        <a class="btn primary" id="btnWhatsTop" href="#" target="_blank" rel="noopener">💬 WhatsApp Business</a>
+        <a class="btn" id="btnInstaTop" href="#" target="_blank" rel="noopener">📸 Instagram</a>
+        <button class="btn" id="btnPix" type="button">💠 Copiar Pix</button>
+      </div>
 
-  --shadow: 0 22px 60px rgba(0,0,0,.55);
-  --radius: 22px;
-}
+      <p class="note" id="pixMsg" aria-live="polite"></p>
 
-*{ box-sizing:border-box }
+      <hr class="line" />
 
-body{
-  margin:0;
-  padding:20px;
-  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-  color:var(--text);
+      <h3>Eu crio sua página com:</h3>
+      <ul class="list">
+        <li>✔ WhatsApp integrado (mensagem pronta)</li>
+        <li>✔ Instagram</li>
+        <li>✔ Pix (copia e cola)</li>
+        <li>✔ Design bonito e organizado</li>
+        <li>✔ Link pronto para colocar na bio</li>
+      </ul>
 
-  /* Fundo com luz suave */
-  background:
-    radial-gradient(900px 520px at 15% 10%, rgba(255,215,0,.16), transparent 60%),
-    radial-gradient(900px 520px at 85% 18%, rgba(148, 76, 255, .22), transparent 62%),
-    radial-gradient(900px 520px at 35% 95%, rgba(255,215,0,.10), transparent 64%),
-    linear-gradient(135deg, var(--bg1), var(--bg2));
-}
+      <p class="note">
+        Se você quiser, faço uma <strong>prévia grátis</strong> com seu nome e você decide.
+      </p>
 
-/* Header */
-.top{
-  padding:22px 18px;
-  border-bottom:1px solid rgba(255,255,255,.10);
-  text-align:center;
-  border-radius: var(--radius);
-  background: rgba(0,0,0,.25);
-  backdrop-filter: blur(10px);
-  box-shadow: var(--shadow);
-}
+      <a class="btn primary" id="btnWhats2" href="#" target="_blank" rel="noopener">
+        Quero uma prévia grátis agora
+      </a>
+    </section>
 
-.top h1{
-  margin:0;
-  font-size:24px;
-  letter-spacing:.7px;
-  color: var(--gold);
-  text-shadow: 0 10px 35px rgba(255,215,0,.18);
-}
+    <section class="card" id="modelos" style="margin-top:14px">
+      <h2>Modelos (exemplos)</h2>
+      <p class="note">Você escolhe um modelo e eu adapto com seu nome, seus links e sua identidade.</p>
 
-nav{ margin-top:12px; }
+      <div class="grid">
+        <a class="btn" id="m1" href="#" target="_blank" rel="noopener">🧩 Modelo • Loja</a>
+        <a class="btn" id="m2" href="#" target="_blank" rel="noopener">🧩 Modelo • Salão</a>
+        <a class="btn" id="m3" href="#" target="_blank" rel="noopener">🧩 Modelo • Confeitaria</a>
+      </div>
+    </section>
 
-nav a{
-  color: var(--muted);
-  text-decoration:none;
-  margin:0 10px;
-  font-size:14px;
-  padding: 8px 10px;
-  border-radius: 999px;
-  border: 1px solid transparent;
-  transition: .2s ease;
-}
-nav a:hover{
-  color: var(--gold2);
-  background: rgba(255,255,255,.06);
-  border-color: rgba(255,255,255,.10);
-}
+    <section class="card" id="planos" style="margin-top:14px">
+      <h2>Planos</h2>
+      <div class="grid">
+        <div class="mini">
+          <h3>Básico</h3>
+          <p class="note">WhatsApp + Instagram + Pix organizado.</p>
+          <a class="btn primary" id="p1" href="#" target="_blank" rel="noopener">Quero o Básico</a>
+        </div>
+        <div class="mini">
+          <h3>Pro (Mais vendido)</h3>
+          <p class="note">Modelos + seções extras + animações leves.</p>
+          <a class="btn primary" id="p2" href="#" target="_blank" rel="noopener">Quero o Pro</a>
+        </div>
+        <div class="mini">
+          <h3>Premium</h3>
+          <p class="note">Página completa + personalização avançada.</p>
+          <a class="btn primary" id="p3" href="#" target="_blank" rel="noopener">Quero o Premium</a>
+        </div>
+      </div>
+    </section>
 
-.container{
-  max-width: 980px;
-  margin: 18px auto 0;
-}
+    <section class="card" id="contato" style="margin-top:14px">
+      <h2>Contato</h2>
+      <p class="note">Clique e fale comigo agora:</p>
+      <div class="grid">
+        <a class="btn primary" id="btnWhatsBottom" href="#" target="_blank" rel="noopener">💬 WhatsApp Business</a>
+        <a class="btn" id="btnInstaBottom" href="#" target="_blank" rel="noopener">📸 Instagram</a>
+      </div>
+    </section>
 
-/* Cards */
-.card{
-  margin-top: 18px;
-  padding: 28px;
-  border-radius: var(--radius);
-  border: 1px solid rgba(255,255,255,.10);
-  background:
-    linear-gradient(180deg, var(--card1), var(--card2));
-  box-shadow: var(--shadow);
-  position: relative;
-  overflow: hidden;
-  transition: .25s ease;
-}
+    <footer class="footer">
+      <small>© 2026 • Sheila Páginas Express</small>
+    </footer>
+  </main>
 
-/* Brilho suave no card (efeito premium) */
-.card::before{
-  content:"";
-  position:absolute;
-  inset:-2px;
-  background:
-    radial-gradient(500px 240px at 10% 10%, rgba(255,215,0,.16), transparent 60%),
-    radial-gradient(420px 220px at 90% 20%, rgba(148, 76, 255,.22), transparent 62%);
-  opacity: .65;
-  pointer-events:none;
-}
-.card > *{ position: relative; }
+  <a class="floatWhats" id="floatWhats" href="#" target="_blank" rel="noopener" aria-label="Chamar no WhatsApp">💬</a>
 
-.card:hover{
-  transform: translateY(-3px);
-}
+  <script>
+    const WHATS_NUMBER = "5511985556223";
+    const INSTA_URL = "https://www.instagram.com/sheila.paginasexpress?igsh=MWF1dWEyMGg4aHE3dw==";
+    const PIX_KEY = "sheilanascimento.tdr@gmail.com";
 
-h2{
-  margin-top:0;
-  color: var(--gold2);
-  text-shadow: 0 12px 35px rgba(255,215,0,.14);
-}
+    const MSG_GERAL = "Olá! Quero um Cartão de Visita 1 Clique com WhatsApp Business, Pix e Instagram organizados para vender mais. Pode fazer uma prévia grátis com meu nome? 😊";
+    const MSG_MODELO = (nomeModelo) => `Olá! Quero um Cartão de Visita 1 Clique no modelo: ${nomeModelo}. Pode fazer uma prévia grátis com meu nome? 😊`;
+    const MSG_PLANO = (plano) => `Olá! Quero o plano ${plano} do Cartão de Visita 1 Clique. Pode fazer minha prévia grátis e me explicar o que vem incluso? 😊`;
 
-.note, .list{
-  color: var(--muted);
-  line-height: 1.75;
-}
+    const wa = (msg) => `https://wa.me/${WHATS_NUMBER}?text=${encodeURIComponent(msg)}`;
+    const waGeral = wa(MSG_GERAL);
 
-.list{ padding-left: 18px; }
+    ["btnWhatsTop","btnWhats2","btnWhatsBottom","floatWhats"].forEach(id => {
+      const el = document.getElementById(id);
+      if (el) el.href = waGeral;
+    });
 
-/* Grade de botões */
-.grid{
-  display:grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 14px;
-  margin-top: 14px;
-}
+    ["btnInstaTop","btnInstaBottom"].forEach(id => {
+      const el = document.getElementById(id);
+      if (el) el.href = INSTA_URL;
+    });
 
-/* Botões */
-.btn{
-  display:block;
-  text-align:center;
-  text-decoration:none;
-  font-weight: 700;
-  padding: 14px 14px;
-  border-radius: 18px;
-  border: 1px solid rgba(255,255,255,.12);
-  background: rgba(255,255,255,.06);
-  color: var(--text);
-  backdrop-filter: blur(8px);
-  box-shadow: 0 14px 35px rgba(0,0,0,.35);
-  transition: .22s ease;
-  cursor:pointer;
-  position: relative;
-  overflow: hidden;
-}
+    [["m1","Loja (Variedades)"],["m2","Salão de Beleza"],["m3","Confeitaria"]].forEach(([id,nome])=>{
+      const el = document.getElementById(id);
+      if (el) el.href = wa(MSG_MODELO(nome));
+    });
 
-/* efeito “luz passando” no hover */
-.btn::after{
-  content:"";
-  position:absolute;
-  top:-40%;
-  left:-60%;
-  width: 60%;
-  height: 180%;
-  background: linear-gradient(90deg, transparent, rgba(255,255,255,.18), transparent);
-  transform: rotate(18deg);
-  opacity: 0;
-  transition: .25s ease;
-}
+    [["p1","Básico"],["p2","Pro"],["p3","Premium"]].forEach(([id,plano])=>{
+      const el = document.getElementById(id);
+      if (el) el.href = wa(MSG_PLANO(plano));
+    });
 
-.btn:hover{
-  transform: translateY(-3px);
-  border-color: rgba(255,215,0,.28);
-  background: rgba(255,215,0,.10);
-  color: var(--gold2);
-}
-.btn:hover::after{
-  left: 120%;
-  opacity: 1;
-}
-
-.btn.primary{
-  border: none;
-  color: #120b18;
-  background: linear-gradient(45deg, #b8860b, var(--gold), var(--gold2));
-  box-shadow: 0 18px 45px rgba(255,215,0,.18), 0 22px 60px rgba(0,0,0,.35);
-}
-.btn.primary:hover{
-  transform: translateY(-3px) scale(1.02);
-  color:#120b18;
-}
-
-/* Caixinhas dos planos */
-.mini{
-  border-radius: 20px;
-  padding: 16px;
-  border: 1px solid rgba(255,255,255,.10);
-  background: rgba(0,0,0,.14);
-}
-
-/* Linha */
-.line{
-  border:none;
-  border-top: 1px solid rgba(255,255,255,.10);
-  margin: 18px 0;
-}
-
-/* Rodapé */
-.footer{
-  margin-top: 26px;
-  text-align:center;
-  color: rgba(255,255,255,.65);
-}
-
-/* Botão flutuante Whats */
-.floatWhats{
-  position: fixed;
-  right: 18px;
-  bottom: 18px;
-  width: 64px;
-  height: 64px;
-  border-radius: 22px;
-  display: grid;
-  place-items: center;
-  text-decoration:none;
-  font-size: 24px;
-  color: #120b18;
-  background: linear-gradient(45deg, #b8860b, var(--gold), var(--gold2));
-  border: 1px solid rgba(255,215,0,.35);
-  box-shadow: 0 18px 55px rgba(0,0,0,.55);
-  transition: .22s ease;
-}
-.floatWhats:hover{
-  transform: translateY(-3px) scale(1.08);
-}
-
-/* Respeita quem prefere menos animação */
-@media (prefers-reduced-motion: reduce){
-  .card:hover, .btn:hover, .floatWhats:hover{ transform:none; }
-  .btn::after{ display:none; }
-}
+    const btnPix = document.getElementById("btnPix");
+    const pixMsg = document.getElementById("pixMsg");
+    if (btnPix){
+      btnPix.addEventListener("click", () => {
+        navigator.clipboard.writeText(PIX_KEY).then(() => {
+          pixMsg.textContent = "✅ Pix copiado! Agora é só colar no app do banco.";
+          setTimeout(() => pixMsg.textContent = "", 3500);
+        }).catch(() => {
+          pixMsg.textContent = "Não consegui copiar automaticamente. Copie manualmente: " + PIX_KEY;
+        });
+      });
+    }
+  </script>
+</body>
+</html>
