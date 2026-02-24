@@ -1,4 +1,4 @@
-es:root{
+:root{
   --bg: #0b2a66;
   --card: rgba(255,255,255,.08);
   --stroke: rgba(255,255,255,.18);
@@ -69,4 +69,4 @@ nav a.active{
   color: var(--muted);
   border-top: 1px solid var(--stroke);
   margin-top: 18px;
-}tyle.css
+}
