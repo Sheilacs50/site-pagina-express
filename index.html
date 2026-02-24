@@ -3,28 +3,165 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Meu Site</title>
+  <title>Sheila • Cartão de Visita 1 Clique</title>
+  <meta name="description" content="Cartão de visita em 1 clique com WhatsApp Business, Instagram e Pix. Peça sua prévia grátis." />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <header class="top">
-    <h1>Meu Site</h1>
+    <h1>Sheila • Páginas Express</h1>
     <nav>
-      <a class="active" href="index.html">Início</a>
-      <a href="express.html">Página Express</a>
+      <a class="active" href="#inicio">Início</a>
+      <a href="#modelos">Modelos</a>
+      <a href="#planos">Planos</a>
+      <a href="#contato">Contato</a>
     </nav>
   </header>
 
-  <main class="container">
+  <main class="container" id="inicio">
     <section class="card">
-      <h2>Bem-vinda 👋</h2>
-      <p>Esse é um site simples publicado no Azure Static Web Apps com GitHub.</p>
-      <a class="btn" href="express.html">Ir para Página Express</a>
+      <h2>Cartão de visita em 1 clique</h2>
+      <p>
+        Muita gente perde venda por não ter um link organizado.
+        Eu crio seu <strong>Cartão de Visita 1 Clique</strong> com tudo pronto para divulgar.
+      </p>
+
+      <div class="grid">
+        <a class="btn primary" id="btnWhatsTop" href="#" target="_blank" rel="noopener">💬 WhatsApp Business</a>
+        <a class="btn" id="btnInstaTop" href="#" target="_blank" rel="noopener">📸 Instagram</a>
+        <button class="btn" id="btnPix">💠 Copiar Pix</button>
+      </div>
+
+      <p class="note" id="pixMsg" aria-live="polite"></p>
+
+      <hr class="line" />
+
+      <h3>Eu crio sua página com:</h3>
+      <ul class="list">
+        <li>✔ WhatsApp integrado (mensagem pronta)</li>
+        <li>✔ Instagram</li>
+        <li>✔ Pix (copia e cola)</li>
+        <li>✔ Design bonito e organizado</li>
+        <li>✔ Link pronto para colocar na bio</li>
+      </ul>
+
+      <p class="note">
+        Se você quiser, faço uma <strong>prévia grátis</strong> com seu nome e você decide.
+      </p>
+
+      <a class="btn primary" id="btnWhats2" href="#" target="_blank" rel="noopener">
+        Quero uma prévia grátis agora
+      </a>
     </section>
+
+    <section class="card" id="modelos" style="margin-top:14px">
+      <h2>Modelos (exemplos)</h2>
+      <p class="note">Você escolhe um modelo e eu adapto com seu nome, seus links e sua identidade.</p>
+
+      <div class="grid">
+        <a class="btn" id="m1" href="#" target="_blank" rel="noopener">🧩 Modelo • Loja</a>
+        <a class="btn" id="m2" href="#" target="_blank" rel="noopener">🧩 Modelo • Salão</a>
+        <a class="btn" id="m3" href="#" target="_blank" rel="noopener">🧩 Modelo • Confeitaria</a>
+      </div>
+    </section>
+
+    <section class="card" id="planos" style="margin-top:14px">
+      <h2>Planos</h2>
+      <div class="grid">
+        <div class="mini">
+          <h3>Básico</h3>
+          <p class="note">WhatsApp + Instagram + Pix organizado.</p>
+          <a class="btn primary" id="p1" href="#" target="_blank" rel="noopener">Quero o Básico</a>
+        </div>
+        <div class="mini">
+          <h3>Pro (Mais vendido)</h3>
+          <p class="note">Modelos + seções extras + animações leves.</p>
+          <a class="btn primary" id="p2" href="#" target="_blank" rel="noopener">Quero o Pro</a>
+        </div>
+        <div class="mini">
+          <h3>Premium</h3>
+          <p class="note">Página completa + personalização avançada.</p>
+          <a class="btn primary" id="p3" href="#" target="_blank" rel="noopener">Quero o Premium</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="card" id="contato" style="margin-top:14px">
+      <h2>Contato</h2>
+      <p class="note">Clique e fale comigo agora:</p>
+      <div class="grid">
+        <a class="btn primary" id="btnWhatsBottom" href="#" target="_blank" rel="noopener">💬 WhatsApp Business</a>
+        <a class="btn" id="btnInstaBottom" href="#" target="_blank" rel="noopener">📸 Instagram</a>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <small>© 2026 • Sheila Páginas Express</small>
+    </footer>
   </main>
 
-  <footer class="footer">
-    <small>© 2026 — Seu site no Azure</small>
-  </footer>
+  <a class="floatWhats" id="floatWhats" href="#" target="_blank" rel="noopener" aria-label="Chamar no WhatsApp">💬</a>
+
+  <script>
+    // ====== CONFIG ======
+    const WHATS_NUMBER = "5511985556223"; // WhatsApp Business: 55 + DDD + número
+    const INSTA_URL = "https://www.instagram.com/sheila.paginasexpress?igsh=MWF1dWEyMGg4aHE3dw==";
+    const PIX_KEY = "sheilanascimento.tdr@gmail.com";
+
+    const MSG_GERAL = "Olá! Quero um Cartão de Visita 1 Clique com WhatsApp Business, Pix e Instagram organizados para vender mais. Pode fazer uma prévia grátis com meu nome? 😊";
+    const MSG_MODELO = (nomeModelo) => `Olá! Quero um Cartão de Visita 1 Clique no modelo: ${nomeModelo}. Pode fazer uma prévia grátis com meu nome? 😊`;
+    const MSG_PLANO = (plano) => `Olá! Quero o plano ${plano} do Cartão de Visita 1 Clique. Pode fazer minha prévia grátis e me explicar o que vem incluso? 😊`;
+
+    const wa = (msg) => `https://wa.me/${WHATS_NUMBER}?text=${encodeURIComponent(msg)}`;
+
+    // Links WhatsApp
+    const waGeral = wa(MSG_GERAL);
+    ["btnWhatsTop","btnWhats2","btnWhatsBottom","floatWhats"].forEach(id => {
+      const el = document.getElementById(id);
+      if (el) el.href = waGeral;
+    });
+
+    // Links Instagram
+    ["btnInstaTop","btnInstaBottom"].forEach(id => {
+      const el = document.getElementById(id);
+      if (el) el.href = INSTA_URL;
+    });
+
+    // Modelos → WhatsApp
+    const modelos = [
+      ["m1", "Loja (Variedades)"],
+      ["m2", "Salão de Beleza"],
+      ["m3", "Confeitaria"]
+    ];
+    modelos.forEach(([id, nome]) => {
+      const el = document.getElementById(id);
+      if (el) el.href = wa(MSG_MODELO(nome));
+    });
+
+    // Planos → WhatsApp
+    const planos = [
+      ["p1", "Básico"],
+      ["p2", "Pro"],
+      ["p3", "Premium"],
+    ];
+    planos.forEach(([id, plano]) => {
+      const el = document.getElementById(id);
+      if (el) el.href = wa(MSG_PLANO(plano));
+    });
+
+    // Copiar Pix
+    const btnPix = document.getElementById("btnPix");
+    const pixMsg = document.getElementById("pixMsg");
+    if (btnPix){
+      btnPix.addEventListener("click", () => {
+        navigator.clipboard.writeText(PIX_KEY).then(() => {
+          pixMsg.textContent = "✅ Pix copiado! Agora é só colar no app do banco.";
+          setTimeout(() => pixMsg.textContent = "", 3500);
+        }).catch(() => {
+          pixMsg.textContent = "Não consegui copiar automaticamente. Copie manualmente: " + PIX_KEY;
+        });
+      });
+    }
+  </script>
 </body>
 </html>
