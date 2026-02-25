@@ -99,7 +99,48 @@ hi<!DOCTYPE html>
       <small>© 2026 • Sheila Páginas Express</small>
     </footer>
   </main>
+<section class="card" id="gerador" style="margin-top:14px">
+  <h2>Gerar Prévia (rápido)</h2>
+  <p class="note">Preencha os dados e copie o link para enviar no WhatsApp.</p>
 
+  <div class="grid">
+    <div class="mini">
+      <label class="lbl">Nome da cliente</label>
+      <input class="inp" id="gNome" placeholder="Ex: Ana Silva" />
+
+      <label class="lbl" style="margin-top:10px">Negócio</label>
+      <input class="inp" id="gNegocio" placeholder="Ex: Manicure" />
+    </div>
+
+    <div class="mini">
+      <label class="lbl">Tema</label>
+      <select class="inp" id="gCor">
+        <option value="roxo">Roxo (padrão)</option>
+        <option value="azul">Azul</option>
+        <option value="preto">Preto</option>
+      </select>
+
+      <label class="lbl" style="margin-top:10px">WhatsApp do cliente (opcional)</label>
+      <input class="inp" id="gWhats" placeholder="Ex: 5511999999999" />
+
+      <label class="lbl" style="margin-top:10px">Instagram do cliente (opcional)</label>
+      <input class="inp" id="gInsta" placeholder="Ex: @anasilva.manicure" />
+    </div>
+
+    <div class="mini">
+      <label class="lbl">Link gerado</label>
+      <input class="inp" id="gLink" readonly />
+
+      <div class="grid" style="grid-template-columns:1fr; margin-top:12px">
+        <button class="btn primary" id="gBtnGerar" type="button">✨ Gerar link</button>
+        <button class="btn" id="gBtnCopiar" type="button">📋 Copiar link</button>
+        <a class="btn" id="gBtnAbrir" href="#" target="_blank" rel="noopener">🔗 Abrir prévia</a>
+      </div>
+
+      <p class="note" id="gMsg" aria-live="polite"></p>
+    </div>
+  </div>
+</section>
   <a class="floatWhats" id="floatWhats" href="#" target="_blank" rel="noopener" aria-label="Chamar no WhatsApp">💬</a>
 
   <script>
