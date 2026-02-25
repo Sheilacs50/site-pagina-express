@@ -249,7 +249,83 @@ if (btnPix){
       pixMsg.textContent = "Não consegui copiar automaticamente. Copie manualmente: " + PIX_KEY;
     });
   });
-}
+}// ====== GERADOR DE LINK DE PRÉVIA ======
+(function(){
+  const $ = (id) => document.getElementById(id);
+
+  const gNome = $("gNome");
+  const gNegocio = $("gNegocio");
+  const gCor = $("gCor");
+  const gWhats = $("gWhats");
+  const gInsta = $("gInsta");
+  const gLink = $("gLink");
+  const gMsg = $("gMsg");
+  const gBtnGerar = $("gBtnGerar");
+  const gBtnCopiar = $("gBtnCopiar");
+  const gBtnAbrir = $("gBtnAbrir");
+
+  if(!gBtnGerar) return; // se a seção não existir, não faz nada
+
+  function limpaInsta(v){
+    return (v || "").trim().replace(/^@/, "");
+  }
+
+  function limpaWhats(v){
+    // mantém só números
+    return (v || "").replace(/\D/g, "");
+  }
+
+  function gerar(){
+    const base = window.location.origin + window.location.pathname;
+    const nome = (gNome.value || "").trim();
+    const negocio = (gNegocio.value || "").trim();
+    const cor = (gCor.value || "roxo").trim();
+    const whats = limpaWhats(gWhats.value);
+    const insta = limpaInsta(gInsta.value);
+
+    const qs = new URLSearchParams();
+    if(nome) qs.set("nome", nome);
+    if(negocio) qs.set("negocio", negocio);
+    if(cor) qs.set("cor", cor);
+    if(whats) qs.set("whats", whats);
+    if(insta) qs.set("insta", insta);
+
+    // força atualização quando compartilhar
+    qs.set("v", String(Date.now()).slice(-6));
+
+    const url = base + "?" + qs.toString();
+    gLink.value = url;
+    gBtnAbrir.href = url;
+
+    gMsg.textContent = "✅ Link gerado! Agora é só copiar e enviar.";
+  }
+
+  async function copiar(){
+    const url = gLink.value;
+    if(!url){
+      gMsg.textContent = "Digite os dados e clique em Gerar link primeiro.";
+      return;
+    }
+    try{
+      await navigator.clipboard.writeText(url);
+      gMsg.textContent = "📋 Copiado! Cole no WhatsApp e envie para a cliente.";
+    }catch(e){
+      gMsg.textContent = "Não consegui copiar automaticamente. Segure e copie o link manualmente.";
+      gLink.focus();
+      gLink.select();
+    }
+  }
+
+  gBtnGerar.addEventListener("click", gerar);
+  gBtnCopiar.addEventListener("click", copiar);
+
+  // gerar automático quando apertar Enter nos campos
+  [gNome, gNegocio, gWhats, gInsta].forEach(inp=>{
+    inp.addEventListener("keydown", (ev)=>{
+      if(ev.key === "Enter"){ ev.preventDefault(); gerar(); }
+    });
+  });
+})();
 </script>
 </body>
 </html>
