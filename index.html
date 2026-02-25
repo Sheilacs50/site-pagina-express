@@ -113,8 +113,7 @@ hi<!DOCTYPE html>
 
     const wa = (msg) => `https://wa.me/${WHATS_NUMBER}?text=${encodeURIComponent(msg)}`;
     const waGeral = wa(MSG_GERAL);
-
-    ["btnWhatsTop","btnWhats2","btnWhatsBottom","floatWhats"].forEach(id => {
+ ["btnWhatsTop","btnWhats2","btnWhatsBottom","floatWhats"].forEach(id => {
       const el = document.getElementById(id);
       if (el) el.href = waGeral;
     });
@@ -145,61 +144,7 @@ hi<!DOCTYPE html>
           pixMsg.textContent = "Não consegui copiar automaticamente. Copie manualmente: " + PIX_KEY;
         });
       });
-    }<script>
-// ====== MODO PRÉVIA (personalização pelo link) ======
-(function(){
-  const params = new URLSearchParams(window.location.search);
-
-  const nome = params.get("nome");
-  const negocio = params.get("negocio");
-  const whats = params.get("whats"); // ex: 5562998744608
-  const insta = params.get("insta"); // ex: saranascimento.0512 (sem @)
-  const cor = (params.get("cor") || "").toLowerCase();
-
-  // Troca textos (nome e negócio)
-  if (nome) {
-    const h1 = document.querySelector(".top h1");
-    if (h1) h1.textContent = `${nome} • Cartão de Visita 1 Clique`;
-  }
-  if (negocio) {
-    const h2 = document.querySelector("h2");
-    if (h2) h2.textContent = `${negocio} • Cartão de Visita Profissional`;
-  }
-
-  // Troca o Instagram dos botões (se existir)
-  if (insta) {
-    const urlInsta = insta.startsWith("http") ? insta : `https://instagram.com/${insta.replace("@","")}`;
-    ["btnInstaTop","btnInstaBottom"].forEach(id => {
-      const el = document.getElementById(id);
-      if (el) el.href = urlInsta;
-    });
-  }
-
-  // Troca WhatsApp dos botões (se existir)
-  if (whats && /^\d{11,14}$/.test(whats)) {
-    const msg = `Olá 😊 Vi a prévia do Cartão de Visita 1 Clique e quero confirmar.`;
-    const wa = `https://wa.me/${whats}?text=${encodeURIComponent(msg)}`;
-    ["btnWhatsTop","btnWhats2","btnWhatsBottom","floatWhats"].forEach(id => {
-      const el = document.getElementById(id);
-      if (el) el.href = wa;
-    });
-  }
-
-  // Troca tema (opcional)
-  if (cor) {
-    const root = document.documentElement;
-    if (cor === "verde") {
-      root.style.setProperty("--bg1", "#062018");
-      root.style.setProperty("--bg2", "#0F3D3E");
-    } else if (cor === "azul") {
-      root.style.setProperty("--bg1", "#061326");
-      root.style.setProperty("--bg2", "#0b2a66");
-    } else if (cor === "preto") {
-      root.style.setProperty("--bg1", "#0a0a0f");
-      root.style.setProperty("--bg2", "#151525");
-    }
-  }
-})();
-  </script>
+<script>
+</script>
 </body>
 </html>
