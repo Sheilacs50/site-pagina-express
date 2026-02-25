@@ -147,64 +147,8 @@
       });
     }
   </script>
-// ====== MODO PRÉVIA (personalização pelo link) ======
-(function(){
-  const params = new URLSearchParams(window.location.search);
 
-  const nome = params.get("nome");
-  const negocio = params.get("negocio");
-  const whats = (params.get("whats") || "").replace(/\D/g, ""); // só números
-  const insta = (params.get("insta") || "").trim();            // pode vir com @ ou link
-  const cor = (params.get("cor") || "").toLowerCase();
-
-  // 1) Trocar Nome no topo (h1)
-  if (nome) {
-    const h1 = document.querySelector(".top h1");
-    if (h1) h1.textContent = `${nome} • Cartão de Visita 1 Clique`;
-  }
-
-  // 2) Trocar Título principal (h2)
-  if (negocio) {
-    const h2 = document.querySelector("h2");
-    if (h2) h2.textContent = `${negocio} • Cartão de Visita Profissional`;
-  }
-
-  // 3) Trocar Instagram dos botões
-  if (insta) {
-    const clean = insta.replace(/^@/, "");
-    const urlInsta = clean.startsWith("http") ? clean : `https://instagram.com/${clean}`;
-    ["btnInstaTop","btnInstaBottom"].forEach(id => {
-      const el = document.getElementById(id);
-      if (el) el.href = urlInsta;
-    });
-  }
-
-  // 4) Trocar WhatsApp dos botões
-  if (whats && /^\d{11,14}$/.test(whats)) {
-    const msg = "Olá 😊 Vi a prévia do Cartão de Visita 1 Clique e quero confirmar.";
-    const wa = `https://wa.me/${whats}?text=${encodeURIComponent(msg)}`;
-    ["btnWhatsTop","btnWhats2","btnWhatsBottom","floatWhats"].forEach(id => {
-      const el = document.getElementById(id);
-      if (el) el.href = wa;
-    });
-  }
-
-  // 5) Trocar tema (verde/azul/preto/roxo)
-  if (cor) {
-    const root = document.documentElement;
-    if (cor === "verde") {
-      root.style.setProperty("--bg1", "#062018");
-      root.style.setProperty("--bg2", "#0F3D3E");
-    } else if (cor === "azul") {
-      root.style.setProperty("--bg1", "#061326");
-      root.style.setProperty("--bg2", "#0b2a66");
-    } else if (cor === "preto") {
-      root.style.setProperty("--bg1", "#0a0a0f");
-      root.style.setProperty("--bg2", "#151525");
-    } else if (cor === "roxo") {
-      // roxo é o padrão do seu CSS, mas deixo aqui para ficar explícito
-      root.style.setProperty("--bg1", "#0b0612");
-      root.style.setProperty("--bg2", "#1b0730");
+   
     }
   }
 })();
