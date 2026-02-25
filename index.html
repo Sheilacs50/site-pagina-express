@@ -135,39 +135,8 @@ if (btnPix){
     });
   });
 }
-
-// ====== MODO PRÉVIA ======
-(function () {
-  const params = new URLSearchParams(window.location.search);
-
-  const nome = params.get("nome");
-  const negocio = params.get("negocio");
-  const cor = (params.get("cor") || "").toLowerCase();
-
-  if (nome) {
-    const h1 = document.querySelector(".top h1");
-    if (h1) h1.textContent = `${nome} • Cartão de Visita 1 Clique`;
-  }
-
-  if (negocio) {
-    const h2 = document.querySelector("main h2");
-    if (h2) h2.textContent = `${negocio} • Cartão de Visita Profissional`;
-  }
-
-  if (cor) {
-    const root = document.documentElement;
-    if (cor === "verde") {
-      root.style.setProperty("--bg1", "#062018");
-      root.style.setProperty("--bg2", "#0F3D3E");
-    } else if (cor === "azul") {
-      root.style.setProperty("--bg1", "#061326");
-      root.style.setProperty("--bg2", "#0b2a66");
-    } else if (cor === "preto") {
-      root.style.setProperty("--bg1", "#0a0a0f");
-      root.style.setProperty("--bg2", "#151525");
-    }
-  }
-})();cript> 
-</script>
+    
+<script>
+</script> 
 </body>
 </html>
