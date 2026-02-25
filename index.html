@@ -103,7 +103,71 @@ se<!DOCTYPE html>
   <a class="floatWhats"
  id="floatWhats" href="#" target="_blank" rel="noopener" aria-label="Chamar no WhatsApp">💬</a>
 
-<script> 
+<s// ===== CONFIGURAÇÃO PADRÃO =====
+const WHATS_NUMBER = "5511985556223";
+const INSTA_URL = "https://instagram.com/sheila.paginasexpress";
+const PIX_KEY = "sheilanascimento.tdr@gmail.com";
+
+const MSG_GERAL = "Olá! Quero um Cartão de Visita 1 Clique profissional. Pode fazer uma prévia com meu nome? 😊";
+
+const wa = (numero, msg) => `https://wa.me/${numero}?text=${encodeURIComponent(msg)}`;
+
+// ===== BOTÕES PADRÃO =====
+["btnWhatsTop","btnWhats2","btnWhatsBottom","floatWhats"].forEach(id => {
+  const el = document.getElementById(id);
+  if (el) el.href = wa(WHATS_NUMBER, MSG_GERAL);
+});
+
+["btnInstaTop","btnInstaBottom"].forEach(id => {
+  const el = document.getElementById(id);
+  if (el) el.href = INSTA_URL;
+});
+
+// ===== COPIAR PIX =====
+const btnPix = document.getElementById("btnPix");
+const pixMsg = document.getElementById("pixMsg");
+
+if (btnPix){
+  btnPix.addEventListener("click", () => {
+    navigator.clipboard.writeText(PIX_KEY).then(() => {
+      pixMsg.textContent = "✅ Pix copiado!";
+      setTimeout(() => pixMsg.textContent = "", 3000);
+    });
+  });
+}
+
+// ====== MODO PRÉVIA ======
+(function () {
+  const params = new URLSearchParams(window.location.search);
+
+  const nome = params.get("nome");
+  const negocio = params.get("negocio");
+  const cor = (params.get("cor") || "").toLowerCase();
+
+  if (nome) {
+    const h1 = document.querySelector(".top h1");
+    if (h1) h1.textContent = `${nome} • Cartão de Visita 1 Clique`;
+  }
+
+  if (negocio) {
+    const h2 = document.querySelector("main h2");
+    if (h2) h2.textContent = `${negocio} • Cartão de Visita Profissional`;
+  }
+
+  if (cor) {
+    const root = document.documentElement;
+    if (cor === "verde") {
+      root.style.setProperty("--bg1", "#062018");
+      root.style.setProperty("--bg2", "#0F3D3E");
+    } else if (cor === "azul") {
+      root.style.setProperty("--bg1", "#061326");
+      root.style.setProperty("--bg2", "#0b2a66");
+    } else if (cor === "preto") {
+      root.style.setProperty("--bg1", "#0a0a0f");
+      root.style.setProperty("--bg2", "#151525");
+    }
+  }
+})();cript> 
 </script>
 </body>
 </html>
