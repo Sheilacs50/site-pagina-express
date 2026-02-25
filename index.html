@@ -103,48 +103,8 @@ hi<!DOCTYPE html>
   <a class="floatWhats" id="floatWhats" href="#" target="_blank" rel="noopener" aria-label="Chamar no WhatsApp">💬</a>
 
   <script>
-    const WHATS_NUMBER = "5511985556223";
-    const INSTA_URL = "https://www.instagram.com/sheila.paginasexpress?igsh=MWF1dWEyMGg4aHE3dw==";
-    const PIX_KEY = "sheilanascimento.tdr@gmail.com";
+    
 
-    const MSG_GERAL = "Olá! Quero um Cartão de Visita 1 Clique com WhatsApp Business, Pix e Instagram organizados para vender mais. Pode fazer uma prévia grátis com meu nome? 😊";
-    const MSG_MODELO = (nomeModelo) => `Olá! Quero um Cartão de Visita 1 Clique no modelo: ${nomeModelo}. Pode fazer uma prévia grátis com meu nome? 😊`;
-    const MSG_PLANO = (plano) => `Olá! Quero o plano ${plano} do Cartão de Visita 1 Clique. Pode fazer minha prévia grátis e me explicar o que vem incluso? 😊`;
-
-    const wa = (msg) => `https://wa.me/${WHATS_NUMBER}?text=${encodeURIComponent(msg)}`;
-    const waGeral = wa(MSG_GERAL);
- ["btnWhatsTop","btnWhats2","btnWhatsBottom","floatWhats"].forEach(id => {
-      const el = document.getElementById(id);
-      if (el) el.href = waGeral;
-    });
-
-    ["btnInstaTop","btnInstaBottom"].forEach(id => {
-      const el = document.getElementById(id);
-      if (el) el.href = INSTA_URL;
-    });
-
-    [["m1","Loja (Variedades)"],["m2","Salão de Beleza"],["m3","Confeitaria"]].forEach(([id,nome])=>{
-      const el = document.getElementById(id);
-      if (el) el.href = wa(MSG_MODELO(nome));
-    });
-
-    [["p1","Básico"],["p2","Pro"],["p3","Premium"]].forEach(([id,plano])=>{
-      const el = document.getElementById(id);
-      if (el) el.href = wa(MSG_PLANO(plano));
-    });
-
-    const btnPix = document.getElementById("btnPix");
-    const pixMsg = document.getElementById("pixMsg");
-    if (btnPix){
-      btnPix.addEventListener("click", () => {
-        navigator.clipboard.writeText(PIX_KEY).then(() => {
-          pixMsg.textContent = "✅ Pix copiado! Agora é só colar no app do banco.";
-          setTimeout(() => pixMsg.textContent = "", 3500);
-        }).catch(() => {
-          pixMsg.textContent = "Não consegui copiar automaticamente. Copie manualmente: " + PIX_KEY;
-        });
-      });
-<script>
 </script>
 </body>
 </html>
