@@ -301,7 +301,10 @@ const gBtnWhats = $("gBtnWhats");
     const url = base + "?" + qs.toString();
     gLink.value = url;
     gBtnAbrir.href = url;
-
+// Mensagem pronta para enviar no WhatsApp (para você mesma / seu atendimento)
+const textoWhats = `Olá 😊\n\nFiz uma prévia demonstrativa do seu Cartão de Visita 1 Clique.\n\n👉 Aqui está o link:\n${url}\n\nSe você gostar, eu organizo tudo com seus dados oficiais e deixo prontinho para você divulgar. 💜`;
+const linkWhats = `https://wa.me/5511985556223?text=${encodeURIComponent(textoWhats)}`;
+if (gBtnWhats) gBtnWhats.href = linkWhats;
     gMsg.textContent = "✅ Link gerado! Agora é só copiar e enviar.";
   }
 
